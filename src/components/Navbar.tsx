@@ -40,13 +40,16 @@ export default function Navbar() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-12">
-              {!isLanding && (
-                <div className="flex items-center gap-8 text-sm">
-                  <NavLink href="/portfolio">Портфолио</NavLink>
-                  <NavLink href="/orders">Заказы</NavLink>
-                  <NavLink href="/profile">Профиль</NavLink>
-                </div>
-              )}
+              <div className="flex items-center gap-8 text-sm">
+                {!isLanding && (
+                  <>
+                    <NavLink href="/portfolio">Портфолио</NavLink>
+                    <NavLink href="/orders">Заказы</NavLink>
+                    <NavLink href="/profile">Профиль</NavLink>
+                  </>
+                )}
+                <NavLink href="/roadmap">Roadmap</NavLink>
+              </div>
               <div className="flex items-center gap-4">
                 <Link href="/login">
                   <Button variant="light" radius="full" className="text-sm font-normal px-6">
@@ -104,6 +107,9 @@ export default function Navbar() {
               </MobileNavLink>
               <MobileNavLink href="/profile" onClick={() => setIsMobileMenuOpen(false)}>
                 Профиль
+              </MobileNavLink>
+              <MobileNavLink href="/roadmap" onClick={() => setIsMobileMenuOpen(false)}>
+                Roadmap
               </MobileNavLink>
               <div className="pt-8 border-t border-gray-100 flex flex-col gap-4">
                 <Link href="/login" onClick={() => setIsMobileMenuOpen(false)}>
